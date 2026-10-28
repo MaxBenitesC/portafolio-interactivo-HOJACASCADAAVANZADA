@@ -1,0 +1,74 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.texto-animado {
+  animation-name: deslizar;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+}
+
+@keyframes deslizar {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.loader {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: 4px solid #ccc;
+  border-top: 4px solid #0d6efd;
+  border-radius: 50%;
+  animation-name: girar;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes girar {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.caja {
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.caja-rotar:hover {
+  transform: rotate(15deg);
+}
+
+.caja-escalar:hover {
+  transform: scale(1.1);
+}
+
+.caja-trasladar:hover {
+  transform: translateY(-15px);
+}
+
+.contenedor-3d {
+  perspective: 800px;
+}
+
+.tarjeta-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+  cursor: pointer;
+}
+
+.tarjeta-3d:hover {
+  transform: rotateX(20deg) rotateY(-20deg);
+}
